@@ -41,6 +41,22 @@ bool j1Gui::PreUpdate()
 	return true;
 }
 
+bool j1Gui::Update(float dt)
+{
+
+	p2List_item<UIElement*> *it = elements.start;
+
+	while (it != nullptr)
+	{
+		it->data->Draw(dt);
+		it = it->next;
+	}
+
+
+	return true;
+
+}
+
 // Called after all Updates
 bool j1Gui::PostUpdate()
 {
@@ -52,9 +68,11 @@ bool j1Gui::CleanUp()
 {
 	LOG("Freeing GUI");
 
+	elements.clear();
+	App->tex->UnLoad(atlas);
+
 	return true;
 }
-
 // const getter for atlas
 const SDL_Texture* j1Gui::GetAtlas() const
 {
@@ -63,3 +81,20 @@ const SDL_Texture* j1Gui::GetAtlas() const
 
 // class Gui ---------------------------------------------------
 
+Image* j1Gui::AddImage(iPoint position, SDL_Rect rect, const SDL_Texture* texture)
+{
+	Image* new image = new Image(position.x, position.y, rect, texture);
+	elements.add((UIElement*)image);
+
+	return image;
+}
+
+Label* j1Gui::AddLabel(int x, int y, char* text, SDL_Color color, _TTF_Font* font)
+{
+	const SDL_Texture* tex = App->font->Print(text, color, font);
+	
+	Label* label = new Label(x, y, tex);
+	elements.add((UIElement*)label);
+
+	return label;
+}

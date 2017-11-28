@@ -2,6 +2,10 @@
 #define __j1GUI_H__
 
 #include "j1Module.h"
+#include "p2List.h"
+#include "UIElement.h"
+#include "Label.h"
+#include "Image.h"
 
 #define CURSOR_WIDTH 2
 
@@ -32,15 +36,21 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
-	// TODO 2: Create the factory methods
-	// Gui creation functions
 
 	const SDL_Texture* GetAtlas() const;
+
+	// TODO 2: Create the factory methods
+	// Gui creation functions
+	bool Update(float dt);
+	Image* AddImage(iPoint pos, SDL_Rect rect, const SDL_Texture* texture);
+	Label* AddLabel(int x, int y, char* text, SDL_Color color, _TTF_Font* font);
 
 private:
 
 	SDL_Texture* atlas;
 	p2SString atlas_file_name;
+	p2List<UIElement*> elements;
+
 };
 
 #endif // __j1GUI_H__

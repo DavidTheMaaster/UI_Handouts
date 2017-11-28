@@ -10,6 +10,7 @@
 #include "j1PathFinding.h"
 #include "j1Gui.h"
 #include "j1Scene.h"
+#include "j1Fonts.h"
 
 j1Scene::j1Scene() : j1Module()
 {
@@ -32,8 +33,18 @@ bool j1Scene::Awake()
 // Called before the first frame
 bool j1Scene::Start()
 {
-	if(App->map->Load("iso_walk.tmx") == true)
+	if (App->map->Load("iso_walk.tmx") == true)
 	{
+		SDL_Color white;
+		white.a = 255;
+		white.r = 255;
+		white.g = 0;
+		white.b = 0;
+
+		_TTF_Font* text = App->font->Load("Fonts/ARIALN.ttf", 15);
+
+		App->gui->AddLabel(10, 10, "patata", white, text);
+
 		int w, h;
 		uchar* data = NULL;
 		if(App->map->CreateWalkabilityMap(w, h, &data))

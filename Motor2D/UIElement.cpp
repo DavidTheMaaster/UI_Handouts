@@ -1,6 +1,7 @@
 #include "j1Render.h"
 #include "j1App.h"
 #include "j1Gui.h"
+#include "UIElement.h"
 
 UIElement::UIElement(int x, int y, const SDL_Texture* texture)
 {

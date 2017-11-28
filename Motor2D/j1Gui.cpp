@@ -81,7 +81,7 @@ const SDL_Texture* j1Gui::GetAtlas() const
 }
 
 // class Gui ---------------------------------------------------
-
+/*
 Image* j1Gui::AddImage(iPoint position, SDL_Rect rect, const SDL_Texture* texture)
 {
 	Image* new image = new Image(position.x, position.y, rect, texture);
@@ -89,6 +89,7 @@ Image* j1Gui::AddImage(iPoint position, SDL_Rect rect, const SDL_Texture* textur
 
 	return image;
 }
+*/
 
 Label* j1Gui::AddLabel(int x, int y, char* text, SDL_Color color, _TTF_Font* font)
 {

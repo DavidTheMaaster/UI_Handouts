@@ -7,10 +7,13 @@ UIElement::UIElement(int x, int y, const SDL_Texture* texture)
 	this->texture = texture;
 	App->tex->GetSize(texture, w, h);
 
+	pos.x = x;
+	pos.y = y;
+
 	rect = { x,y,(int)w,(int)h };
 }
 
 void UIElement::Draw(float dt)
 {
-	App->render->Blit(texture, rect.x, rect.y, &rect);
+	App->render->Blit(texture, pos.x, pos.y, &rect);
 }

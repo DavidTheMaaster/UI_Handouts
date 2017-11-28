@@ -19,6 +19,7 @@ public:
 public:
 
 	SDL_Rect rect;
+	iPoint pos;
 	uint w;
 	uint h;
 

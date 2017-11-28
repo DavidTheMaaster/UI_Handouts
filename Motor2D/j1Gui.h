@@ -13,6 +13,25 @@
 // TODO 1: Create your structure of classes
 
 // ---------------------------------------------------
+
+enum COLOURS
+{
+	BLACK,
+	WHITE,
+	RED,
+	BLUE,
+	GREEN,
+	YELLOW
+};
+
+enum FONTS
+{
+	ARIALN,
+	FRIZQT,
+	MORPHEUS,
+	SKURRI
+};
+
 class j1Gui : public j1Module
 {
 public:
@@ -44,8 +63,10 @@ public:
 	// Gui creation functions
 	bool Update(float dt);
 
-	Label* AddLabel(int x, int y, char* text, SDL_Color color, _TTF_Font* font);
+	Label* AddLabel(int x, int y, char* text, uint color, uint font, int size);
 	Image* AddImage(int x, int y, SDL_Texture* texture, SDL_Rect Animation);
+	SDL_Color GetColor(int color);
+	char* GetFont(uint font);
 
 private:
 

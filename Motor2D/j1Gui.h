@@ -6,6 +6,7 @@
 #include "UIElement.h"
 #include "Label.h"
 #include "Image.h"
+#include "j1Fonts.h"
 
 #define CURSOR_WIDTH 2
 

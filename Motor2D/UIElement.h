@@ -10,7 +10,7 @@ class UIElement
 {
 public:
 
-	UIElement(int, int, const SDL_Texture*);
+	UIElement(int x, int y, const SDL_Texture* texture);
 	virtual ~UIElement() { };
 
 	//virtual void Update(float dt) { };

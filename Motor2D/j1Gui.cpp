@@ -69,6 +69,7 @@ bool j1Gui::CleanUp()
 	LOG("Freeing GUI");
 
 	elements.clear();
+	
 	App->tex->UnLoad(atlas);
 
 	return true;

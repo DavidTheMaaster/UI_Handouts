@@ -35,16 +35,6 @@ bool j1Scene::Start()
 {
 	if (App->map->Load("iso_walk.tmx") == true)
 	{
-		SDL_Color white;
-		white.a = 255;
-		white.r = 255;
-		white.g = 0;
-		white.b = 0;
-
-		_TTF_Font* text = App->font->Load("Fonts/ARIALN.ttf", 15);
-
-		App->gui->AddLabel(10, 10, "patata", white, text);
-
 		int w, h;
 		uchar* data = NULL;
 		if(App->map->CreateWalkabilityMap(w, h, &data))
@@ -53,7 +43,7 @@ bool j1Scene::Start()
 		RELEASE_ARRAY(data);
 	}
 
-	debug_tex = App->tex->Load("maps/path2.png");
+	//debug_tex = App->tex->Load("maps/path2.png");
 
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 

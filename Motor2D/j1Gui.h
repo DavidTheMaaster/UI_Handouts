@@ -43,8 +43,9 @@ public:
 	// TODO 2: Create the factory methods
 	// Gui creation functions
 	bool Update(float dt);
-	//Image* AddImage(iPoint pos, SDL_Rect rect, const SDL_Texture* texture);
+
 	Label* AddLabel(int x, int y, char* text, SDL_Color color, _TTF_Font* font);
+	Image* AddImage(int x, int y, SDL_Texture* texture, SDL_Rect Animation);
 
 private:
 

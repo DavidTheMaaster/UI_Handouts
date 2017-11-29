@@ -99,9 +99,9 @@ Label* j1Gui::AddLabel(int x, int y, char* text, uint colors, uint fonts, int si
 }
 
 
-Image * j1Gui::AddImage(int x, int y, SDL_Texture* texture, SDL_Rect Animation)
+Image * j1Gui::AddImage(int x, int y, SDL_Texture* texture)
 {
-	Image* image = new Image(x, y, texture, Animation);
+	Image* image = new Image(x, y, texture);
 	elements.add((UIElement*)image);
 
 	return image;
@@ -140,9 +140,9 @@ SDL_Color j1Gui::GetColor(int color)
 		ret.b = 0;
 		break;
 	case YELLOW:
-		ret.r = 255;
-		ret.g = 255;
-		ret.b = 0;
+		ret.r = 218;
+		ret.g = 202;
+		ret.b = 124;
 		break;
 	default:
 		break;

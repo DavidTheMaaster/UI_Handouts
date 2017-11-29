@@ -64,7 +64,7 @@ public:
 	bool Update(float dt);
 
 	Label* AddLabel(int x, int y, char* text, uint color, uint font, int size);
-	Image* AddImage(int x, int y, SDL_Texture* texture, SDL_Rect Animation);
+	Image* AddImage(int x, int y, SDL_Texture* texture);
 	SDL_Color GetColor(int color);
 	char* GetFont(uint font);
 

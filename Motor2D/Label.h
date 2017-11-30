@@ -9,7 +9,7 @@
 class Label : public UIElement
 {
 public:
-	Label(uint pos_x, uint pos_y, const SDL_Texture* texture);
+	Label(uint pos_x, uint pos_y, UI_TYPE type, const SDL_Texture* texture);
 };
 
 

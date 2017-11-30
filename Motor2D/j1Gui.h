@@ -6,6 +6,7 @@
 #include "UIElement.h"
 #include "Label.h"
 #include "Image.h"
+#include "Button.h"
 #include "j1Fonts.h"
 
 #define CURSOR_WIDTH 2
@@ -30,6 +31,14 @@ enum FONTS
 	FRIZQT,
 	MORPHEUS,
 	SKURRI
+};
+
+enum UI_TYPE
+{
+	NO_TYPE,
+	LABEL,
+	BUTTON,
+	IMAGE
 };
 
 class j1Gui : public j1Module
@@ -65,6 +74,7 @@ public:
 
 	Label* AddLabel(int x, int y, char* text, uint color, uint font, int size);
 	Image* AddImage(int x, int y, SDL_Texture* texture);
+	Button* AddButton(int x, int y, SDL_Texture* texture, j1Module* callback = nullptr);
 	SDL_Color GetColor(int color);
 	char* GetFont(uint font);
 

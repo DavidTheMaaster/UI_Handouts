@@ -49,6 +49,7 @@ bool j1Gui::Update(float dt)
 	while (it != nullptr)
 	{
 		it->data->Draw(dt);
+		it->data->Update(dt);
 		it = it->next;
 	}
 
@@ -92,20 +93,29 @@ Label* j1Gui::AddLabel(int x, int y, char* text, uint colors, uint fonts, int si
 
 	const SDL_Texture* tex = App->font->Print(text, color, font);
 	
-	Label* label = new Label(x, y, tex);
+	Label* label = new Label(x, y, LABEL, tex);
 	elements.add((UIElement*)label);
 
 	return label;
 }
 
 
-Image * j1Gui::AddImage(int x, int y, SDL_Texture* texture)
+Image* j1Gui::AddImage(int x, int y, SDL_Texture* texture)
 {
-	Image* image = new Image(x, y, texture);
+	Image* image = new Image(x, y, IMAGE, texture);
 	elements.add((UIElement*)image);
 
 	return image;
 }
+
+Button* j1Gui::AddButton(int x, int y, SDL_Texture* texture, j1Module* callback)
+{
+	Button* button = new Button(x, y, BUTTON, texture, callback);
+	elements.add((UIElement*)button);
+
+	return button;
+}
+
 
 SDL_Color j1Gui::GetColor(int color)
 {

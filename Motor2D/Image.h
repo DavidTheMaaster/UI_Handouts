@@ -9,7 +9,7 @@
 class Image : public UIElement
 {
 public:
-	Image(uint pos_x, uint pos_y,  SDL_Texture* texture);
+	Image(uint pos_x, uint pos_y, UI_TYPE type, SDL_Texture* texture);
 };
 
 

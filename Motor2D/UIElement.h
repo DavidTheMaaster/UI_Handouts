@@ -36,7 +36,7 @@ public:
 
 	j1Module* callback = nullptr;
 
-	UI_TYPE type;
+	uint type;
 
 	UI_STATE state;
 
@@ -51,7 +51,5 @@ public:
 	virtual void Update(float dt);
 
 };
-
-
 
 #endif

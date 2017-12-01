@@ -10,6 +10,8 @@ UIElement::UIElement(int x, int y, uint type, const SDL_Texture* texture)
 	this->texture = texture;
 	App->tex->GetSize(texture, w, h);
 
+	this->type = type;
+
 	pos.x = x;
 	pos.y = y;
 
@@ -23,7 +25,7 @@ void UIElement::Draw(float dt)
 
 void UIElement::Update(float dt)
 {
-	if (this->type == BUTTON) {
+	if (type == BUTTON) {
 
 		int mouse_x = 0, mouse_y = 0;
 		App->input->GetMousePosition(mouse_x, mouse_y);

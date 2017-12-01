@@ -6,6 +6,10 @@
 #include "j1Fonts.h"
 #include "j1Input.h"
 #include "j1Gui.h"
+#include "Button.h"
+#include "Image.h"
+#include "Label.h"
+
 
 j1Gui::j1Gui() : j1Module()
 {

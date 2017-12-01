@@ -4,12 +4,13 @@
 #include "j1Module.h"
 #include "p2List.h"
 #include "UIElement.h"
-#include "Label.h"
-#include "Image.h"
-#include "Button.h"
 #include "j1Fonts.h"
 
 #define CURSOR_WIDTH 2
+
+class Label;
+class Image;
+class Button;
 
 // TODO 1: Create your structure of classes
 

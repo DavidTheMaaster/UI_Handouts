@@ -9,7 +9,7 @@
 class Button : public UIElement
 {
 public:
-	Button(uint pos_x, uint pos_y, UI_TYPE type, SDL_Texture* texture, j1Module* callback);
+	Button(int pos_x, int pos_y, uint type, SDL_Texture* texture, j1Module* callback);
 };
 
 

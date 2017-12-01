@@ -5,7 +5,7 @@
 #include "j1Input.h"
 #include "p2Log.h"
 
-UIElement::UIElement(int x, int y, UI_TYPE type, const SDL_Texture* texture)
+UIElement::UIElement(int x, int y, uint type, const SDL_Texture* texture)
 {
 	this->texture = texture;
 	App->tex->GetSize(texture, w, h);

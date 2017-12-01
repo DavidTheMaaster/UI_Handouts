@@ -33,14 +33,6 @@ enum FONTS
 	SKURRI
 };
 
-enum UI_TYPE
-{
-	NO_TYPE,
-	LABEL,
-	BUTTON,
-	IMAGE
-};
-
 class j1Gui : public j1Module
 {
 public:
@@ -71,7 +63,7 @@ public:
 	// TODO 2: Create the factory methods
 	// Gui creation functions
 	bool Update(float dt);
-
+	
 	Label* AddLabel(int x, int y, char* text, uint color, uint font, int size);
 	Image* AddImage(int x, int y, SDL_Texture* texture);
 	Button* AddButton(int x, int y, SDL_Texture* texture, j1Module* callback = nullptr);

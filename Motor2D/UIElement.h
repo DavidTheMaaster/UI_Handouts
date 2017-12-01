@@ -16,6 +16,14 @@ enum UI_STATE {
 	FOCUSED,
 };
 
+enum UI_TYPE
+{
+	NO_TYPE,
+	LABEL,
+	BUTTON,
+	IMAGE
+};
+
 class UIElement
 {
 
@@ -29,13 +37,14 @@ public:
 	j1Module* callback = nullptr;
 
 	UI_TYPE type;
+
 	UI_STATE state;
 
 	const SDL_Texture *texture = nullptr;
 
 public:
 
-	UIElement(int x, int y, UI_TYPE type, const SDL_Texture* texture);
+	UIElement(int x, int y, uint type, const SDL_Texture* texture);
 	virtual ~UIElement() { };
 
 	virtual void Draw(float dt);

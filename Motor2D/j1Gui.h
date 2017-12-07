@@ -65,9 +65,9 @@ public:
 	// Gui creation functions
 	bool Update(float dt);
 	
-	Label* AddLabel(int x, int y, char* text, uint color, uint font, int size);
-	Image* AddImage(int x, int y, SDL_Texture* texture);
-	Button* AddButton(int x, int y, SDL_Texture* texture, j1Module* callback = nullptr);
+	Label* AddLabel(int x, int y, char* text, uint color, uint font, int size, UIElement* parent = nullptr);
+	Image* AddImage(int x, int y, SDL_Texture* texture, UIElement* parent = nullptr);
+	Button* AddButton(int x, int y, SDL_Texture* texture, j1Module* callback = nullptr, UIElement* parent = nullptr);
 	SDL_Color GetColor(int color);
 	char* GetFont(uint font);
 

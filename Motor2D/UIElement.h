@@ -35,6 +35,7 @@ public:
 	uint h;
 
 	j1Module* callback = nullptr;
+	UIElement* parent = nullptr;
 
 	uint type;
 
@@ -44,7 +45,7 @@ public:
 
 public:
 
-	UIElement(int x, int y, uint type, const SDL_Texture* texture);
+	UIElement(int x, int y, uint type, const SDL_Texture* texture, UIElement* parent = nullptr);
 	virtual ~UIElement() { };
 
 	virtual void Draw(float dt);

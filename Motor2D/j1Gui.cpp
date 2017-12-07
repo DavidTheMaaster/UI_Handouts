@@ -87,7 +87,7 @@ const SDL_Texture* j1Gui::GetAtlas() const
 
 // class Gui ---------------------------------------------------
 
-Label* j1Gui::AddLabel(int x, int y, char* text, uint colors, uint fonts, int size)
+Label* j1Gui::AddLabel(int x, int y, char* text, uint colors, uint fonts, int size, UIElement* parent)
 {
 	SDL_Color color;
 	
@@ -97,24 +97,24 @@ Label* j1Gui::AddLabel(int x, int y, char* text, uint colors, uint fonts, int si
 
 	const SDL_Texture* tex = App->font->Print(text, color, font);
 	
-	Label* label = new Label(x, y, LABEL, tex);
+	Label* label = new Label(x, y, LABEL, tex, parent);
 	elements.add((UIElement*)label);
 
 	return label;
 }
 
 
-Image* j1Gui::AddImage(int x, int y, SDL_Texture* texture)
+Image* j1Gui::AddImage(int x, int y, SDL_Texture* texture, UIElement* parent)
 {
-	Image* image = new Image(x, y, IMAGE, texture);
+	Image* image = new Image(x, y, IMAGE, texture, parent);
 	elements.add((UIElement*)image);
 
 	return image;
 }
 
-Button* j1Gui::AddButton(int x, int y, SDL_Texture* texture, j1Module* callback)
+Button* j1Gui::AddButton(int x, int y, SDL_Texture* texture, j1Module* callback, UIElement* parent)
 {
-	Button* button = new Button(x, y, BUTTON, texture, callback);
+	Button* button = new Button(x, y, BUTTON, texture, callback, parent);
 	elements.add((UIElement*)button);
 
 	return button;

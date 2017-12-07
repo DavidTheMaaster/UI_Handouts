@@ -47,8 +47,9 @@ bool j1Scene::Start()
 	small_button = App->tex->Load("textures/small_button.png");
 	dialog = App->tex->Load("textures/dialog_button.png");
 
-
-
+	
+	
+	Image* patata = App->gui->AddImage(0, 0, Background);
 	
 
 	SDL_Rect r;
@@ -56,13 +57,13 @@ bool j1Scene::Start()
 	r.w = r.h = 100;
 
 	//IMAGES
-	App->gui->AddImage(0, 0, Background);
+
 	App->gui->AddImage(712, 840, blizzard);
 	App->gui->AddImage(19, 863, pegi);
 	App->gui->AddImage(16, 12, logo);
 
 	//BUTTONS
-	App->gui->AddButton(20, 690, small_button, this);
+	App->gui->AddButton(20, 690, small_button, this, (UIElement*)patata);
 	App->gui->AddButton(20, 735, small_button, this);
 	App->gui->AddButton(20, 780, small_button, this);
 	App->gui->AddButton(20, 825, small_button, this);

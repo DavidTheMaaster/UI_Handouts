@@ -62,20 +62,20 @@ bool j1Scene::Start()
 	App->gui->AddImage(16, 12, logo);
 
 	//BUTTONS
-	App->gui->AddButton(20, 690, small_button);
-	App->gui->AddButton(20, 735, small_button);
-	App->gui->AddButton(20, 780, small_button);
-	App->gui->AddButton(20, 825, small_button);
-	App->gui->AddButton(1390, 600, small_button);
-	App->gui->AddButton(1390, 645, small_button);
-	App->gui->AddButton(1390, 690, small_button);
-	App->gui->AddButton(1390, 735, small_button);
-	App->gui->AddButton(1390, 900, small_button);
+	App->gui->AddButton(20, 690, small_button, this);
+	App->gui->AddButton(20, 735, small_button, this);
+	App->gui->AddButton(20, 780, small_button, this);
+	App->gui->AddButton(20, 825, small_button, this);
+	App->gui->AddButton(1390, 600, small_button, this);
+	App->gui->AddButton(1390, 645, small_button, this);
+	App->gui->AddButton(1390, 690, small_button, this);
+	App->gui->AddButton(1390, 735, small_button, this);
+	App->gui->AddButton(1390, 900, small_button, this);
 
 	
-	App->gui->AddButton(666, 708, button);
-	App->gui->AddButton(666, 490, dialog);
-	App->gui->AddButton(666, 580, dialog);
+	App->gui->AddButton(666, 708, button, this);
+	App->gui->AddButton(666, 490, dialog, this);
+	App->gui->AddButton(666, 580, dialog, this);
 
 
 

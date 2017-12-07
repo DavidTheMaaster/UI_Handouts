@@ -38,6 +38,7 @@ public:
 	UIElement* parent = nullptr;
 
 	iPoint mouse_movement;
+	iPoint mouse2;
 
 	uint type;
 

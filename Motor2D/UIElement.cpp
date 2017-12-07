@@ -59,10 +59,13 @@ void UIElement::Update(float dt)
 
 		if (state == L_MOUSE_PRESSED)
 		{
-			App->input->GetMouseMotion(mouse_movement.x, mouse_movement.y);
-			pos.x += mouse_movement.x;
-			pos.y += mouse_movement.y;
-
+			if (mouse_x != mouse2.x || mouse_y != mouse2.y) {
+				App->input->GetMouseMotion(mouse_movement.x, mouse_movement.y);
+				pos.x += mouse_movement.x;
+				pos.y += mouse_movement.y;
+				mouse2.x = mouse_x;
+				mouse2.y = mouse_y;
+			}
 		}
 	}
 }

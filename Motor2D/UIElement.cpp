@@ -20,7 +20,10 @@ UIElement::UIElement(int x, int y, uint type, const SDL_Texture* texture, UIElem
 
 void UIElement::Draw(float dt)
 {
-	App->render->Blit(texture, pos.x, pos.y, &rect, 0.0);
+	if (parent != nullptr)
+		App->render->Blit(texture, parent->pos.x + pos.x, parent->pos.y + pos.y, &rect, 0.0);
+	else
+		App->render->Blit(texture, pos.x, pos.y, &rect, 0.0);
 }
 
 void UIElement::Update(float dt)

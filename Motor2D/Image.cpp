@@ -6,4 +6,6 @@ Image::Image(int x, int y, uint type, SDL_Texture * texture, UIElement* parent) 
 {
 	pos.x = x;
 	pos.y = y;
+
+	this->parent = parent;
 }

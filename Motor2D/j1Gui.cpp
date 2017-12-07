@@ -117,6 +117,7 @@ Button* j1Gui::AddButton(int x, int y, SDL_Texture* texture, j1Module* callback,
 	Button* button = new Button(x, y, BUTTON, texture, callback, parent);
 	elements.add((UIElement*)button);
 
+
 	return button;
 }
 

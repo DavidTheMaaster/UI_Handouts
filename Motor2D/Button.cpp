@@ -8,4 +8,6 @@ Button::Button(int x, int y, uint type, SDL_Texture * texture, j1Module* callbac
 	pos.y = y;
 
 	this->callback = callback;	
+
+	this->parent = parent;
 }

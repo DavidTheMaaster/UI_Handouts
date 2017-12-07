@@ -56,5 +56,13 @@ void UIElement::Update(float dt)
 			this->callback->UIEvent(this, state);
 			LOG("Mouse Stop Left Click");
 		}
+
+		if (state == L_MOUSE_PRESSED)
+		{
+			App->input->GetMouseMotion(mouse_movement.x, mouse_movement.y);
+			pos.x += mouse_movement.x;
+			pos.y += mouse_movement.y;
+
+		}
 	}
 }

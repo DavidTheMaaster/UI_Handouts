@@ -37,6 +37,8 @@ public:
 	j1Module* callback = nullptr;
 	UIElement* parent = nullptr;
 
+	iPoint mouse_movement;
+
 	uint type;
 
 	UI_STATE state;
